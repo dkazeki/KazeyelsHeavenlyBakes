@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kazeyel's Heavenly Bakes</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    
+    <body>
+        <header class="navbar">
+            <a href="#" class="logo">Kazeyel's Heavenly Bakes</a>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#order">Order</a>
+                <a href="#receipt">Receipt</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <div class="auth-buttons">
+            <button class="login-btn" onclick="openModal()"> Sign In </button>
+        </div>
+        
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()"> &times; </span>
+                <h2>Sign In</h2>
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button class="primary-btn full-btn" onclick="loginUser()"> Login </button>
+                <p id="loginMessage"></p>
+            </div>
+        </div>
+        
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="tagline">Freshly Baked • Sweet Moments • Made With Love</p>
+                <h1>Where every crumb is divine.</h1>
+                <p class="hero-text"> Welcome to Kazeyel's Heavenly Bakes, a cozy bakery ordering system
+                    for cakes, drinks, and desserts. 
+                </p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="primary-btn">View Menu</a>
+                    <a href="#order" class="secondary-btn">Go to Order</a>
+                </div>
+            </div>
+            
+            <div class="hero-card">
+                <h3>Today's Special</h3>
+                <p>Strawberry Dream Cake</p>
+                <span>₱250</span>
+            </div>
+        </section>
+        
+        <section id="menu" class="section">
+            <p class="section-label">Bakery Menu</p>
+            <h2>Choose from our best-selling treats.</h2>
+            
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="images/strawberry.jpg" class="menu-image">
+                    <h3>Strawberry Dream Cake</h3>
+                    <p>Soft vanilla cake topped with strawberry cream.</p>
+                    <span>₱250</span>
+                    <button onclick="addItem('Strawberry Dream Cake', 250)">Add to Order</button>
+                </div>
+                
+                <div class="menu-card">
+                    <img src="images/chocolate.jpg" class="menu-image">
+                    <h3>Chocolate Heaven Slice</h3>
+                    <p>Rich chocolate cake with smooth frosting.</p>
+                    <span>₱180</span>
+                    <button onclick="addItem('Chocolate Heaven Slice', 180)">Add to Order</button>
+                </div>
+
+                <div class="menu-card">
+                    <img src="images/vanilla.jpg" class="menu-image">
+                    <h3>Vanilla Cupcake</h3>
+                    <p>Classic cupcake with creamy vanilla icing.</p>
+                    <span>₱80</span>
+                    <button onclick="addItem('Vanilla Cupcake', 80)">Add to Order</button>
+                </div>
+
+                <div class="menu-card">
+                    <img src="images/croissants.jpg" class="menu-image">
+                    <h3>Butter Croissant</h3>
+                    <p>Flaky golden croissant baked fresh daily.</p>
+                    <span>₱90</span>
+                    <button onclick="addItem('Butter Croissant', 90)">Add to Order</button>
+                </div>
+
+                <div class="menu-card">
+                    <img src="images/coffee.jpg" class="menu-image">
+                    <h3>Iced Coffee</h3>
+                    <p>Cold coffee drink with a smooth sweet finish.</p>
+                    <span>₱120</span>
+                    <button onclick="addItem('Iced Coffee', 120)">Add to Order</button>
+                </div>
+
+                <div class="menu-card">
+                    <img src="images/milk.jpg" class="menu-image">
+                    <h3>Strawberry Milk</h3>
+                    <p>Fresh milk blended with strawberry flavor.</p>
+                    <span>₱110</span>
+                    <button onclick="addItem('Strawberry Milk', 110)">Add to Order</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="order-section">
+            <div class="order-form">
+                <p class="section-label">Order Details</p>
+                <h2>Customer and cashier information</h2>
+                
+                <div class="form-grid">
+                    <div>
+                        <label>Cashier Name</label>
+                        <input type="text" id="cashierName">
+                    </div>
+
+                    <div>
+                        <label>Customer Name</label>
+                        <input type="text" id="customerName">
+                    </div>
+
+                    <div>
+                        <label>Contact Number</label>
+                        <input type="tel" id="contactNumber">
+                    </div>
+
+                    <div>
+                        <label>Payment Method</label>
+                        <select id="paymentMethod">
+                            <option>Cash</option>
+                            <option>GCash</option>
+                            <option>Card</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cart-box">
+                <div class="cart-header">
+                    <h2>Your Order</h2>
+                    <button class="clear-btn" onclick="clearOrder()">Clear</button>
+                </div>
+
+                <div id="cartItems" class="cart-items">
+                    <p>No items added yet.</p>
+                </div>
+
+                <div class="cart-total">
+                    <span>Total</span>
+                    <strong id="cartTotal">₱0</strong>
+                </div>
+
+                <button class="primary-btn full-btn" onclick="printReceipt()">
+                    Generate Receipt
+                </button>
+            </div>
+        </section>
+        
+        <section id="receipt" class="receipt-section">
+            <p class="section-label">Receipt</p>
+            <h2>Generated Receipt</h2>
+            <pre id="receiptOutput">Your receipt will appear here after you generate it.</pre>
+        </section>
+        
+        <section id="contact" class="contact-section">
+            <p class="section-label">Contact Us</p>
+            <h2>We'd love to hear from you.</h2>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Visit Our Bakery</h3>
+                    <p>123 Sweet Street, Las Piñas City</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Call Us</h3>
+                    <p>0912-345-6789</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p>kazeyelsheavenlybakes@gmail.com</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Store Hours</h3>
+                    <p>Monday - Saturday<br>8:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2026 Kazeyel's Heavenly Bakes. All rights reserved.</p>
+        </footer>
+        
+        <script src="script.js"></script>
+    </body>
+</html>

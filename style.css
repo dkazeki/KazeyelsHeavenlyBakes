@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff6ff;
+    color: #4b2e4f;
+}
+
+.navbar {
+    background: #b56fc2;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 999px;
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255,255,255,0.18);
+}
+
+.hero {
+    min-height: 90vh;
+    padding: 80px 8%;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.tagline,
+.section-label {
+    color: #8f4aa3;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    margin-bottom: 30px;
+    color: #6b4a70;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.primary-btn,
+.secondary-btn,
+.menu-card button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.primary-btn,
+.menu-card button {
+    background: #f3c4f3;
+    color: #4b2e4f;
+}
+
+.secondary-btn {
+    background: white;
+    color: #8f4aa3;
+    border: 2px solid #d9a4df;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.menu-card button:hover,
+.login-btn:hover {
+    transform: translateY(-2px);
+}
+
+.hero-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #efd6f3;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.hero-card p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.hero-card span {
+    color: #8f4aa3;
+    font-size: 24px;
+}
+
+.section {
+    padding: 80px 8%;
+}
+
+.section h2,
+.contact-section h2 {
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.menu-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #efd6f3;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.menu-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.menu-card h3 {
+    margin-bottom: 10px;
+}
+
+.menu-card p {
+    margin-bottom: 15px;
+    color: #6b4a70;
+}
+
+.menu-card span {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #8f4aa3;
+}
+
+.order-section {
+    padding: 80px 8%;
+    background: #f7e5fa;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 30px;
+}
+
+.order-form,
+.cart-box,
+.receipt-section pre {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #efd6f3;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #d9a4df;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #b56fc2;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.clear-btn {
+    background: #f8d7ef;
+    color: #8f4aa3;
+    border: none;
+    padding: 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.full-btn {
+    width: 100%;
+}
+
+.receipt-section {
+    padding: 80px 8%;
+}
+
+.receipt-section pre {
+    white-space: pre-wrap;
+}
+
+.contact-section {
+    padding: 80px 8%;
+    background: #f7e5fa;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #efd6f3;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.contact-card h3 {
+    margin-bottom: 15px;
+    color: #8f4aa3;
+}
+
+.contact-card p {
+    color: #6b4a70;
+    line-height: 1.7;
+}
+
+footer {
+    background: #b56fc2;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media(max-width:900px){
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero,
+    .order-section {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-grid,
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .menu-grid,
+    .form-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+}
+
+.auth-buttons {
+    position: fixed;
+    top: 90px;
+    right: 30px;
+    z-index: 50;
+}
+
+.login-btn {
+    background: #f3c4f3;
+    color: #4b2e4f;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    margin: 120px auto;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #efd6f3;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.modal-content input {
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#loginMessage {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.menu-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
